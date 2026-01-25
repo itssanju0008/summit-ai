@@ -24,3 +24,19 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Smooth scrolling for anchor navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchor targets to account for fixed header height */
+[id] {
+  scroll-margin-top: 4rem; /* matches h-16 on mobile */
+}
+
+@media (min-width: 640px) {
+  [id] {
+    scroll-margin-top: 5rem; /* matches h-20 on larger screens */
+  }
+}
