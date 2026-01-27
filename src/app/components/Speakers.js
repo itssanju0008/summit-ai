@@ -82,7 +82,7 @@ const speakersRow1 = [
   // { id: 9, name: "Smt. Ranjana Chopra", title: "Secretary, Ministry of Tribal Affairs", image: '/images/Speakers/ranjana_chopra_ias.png', website: "https://trifed.tribal.gov.in/node/1533", email: "secy-tribal@nic.in" },
   {
     id: 10,
-    name: "Mr. Vibhu Nayar",
+    name: "Dr. Vibhu Nayar",
     title: "Former Secretary, Ministry Of Tribal Affairs",
     image: "/images/Speakers/vibhunayar.jpeg",
     website: "https://example.com/anjali-sharma",
