@@ -4,11 +4,12 @@ import EmblaCarousel from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Image } from '@/ui/Image/Image';
+import Link from 'next/link';
 
 const slides = [
   {
     id: 1,
-    image: "/images/carousel/halma.png",
+    image: "/images/carousel/halma.jpeg",
     title: "From the Last Mile to Logic",
     description: "Where Communities Shape Intelligence",
     subtitle: "Co-creating AI solutions with communities"
@@ -108,9 +109,9 @@ export function Carousel() {
                   </p>
 
                   <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 sm:gap-3 pt-2">
-                    <button className="px-4 sm:px-5 md:px-6 py-2 md:py-3 bg-blue-500 hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300 text-white font-semibold rounded-full transition-all duration-200 shadow-lg shadow-blue-900/30 text-sm md:text-base whitespace-nowrap">
+                    <Link href="#about" className="px-4 sm:px-5 md:px-6 py-2 md:py-3 bg-blue-500 hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300 text-white font-semibold rounded-full transition-all duration-200 shadow-lg shadow-blue-900/30 text-sm md:text-base whitespace-nowrap">
                       Discover the Summit
-                    </button>
+                    </Link>
                     <span className="text-xs sm:text-sm text-white/70">Academically grounded. Community driven.</span>
                   </div>
                 </div>

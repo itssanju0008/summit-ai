@@ -8,13 +8,13 @@ export default function page() {
         {/* Header */}
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-block mb-3 md:mb-4">
-            <span className="border-2 border-amber-600 text-amber-600 px-4 py-2 sm:px-4 sm:py-2 rounded text-xs sm:text-sm font-semibold tracking-wide uppercase">
-              Join Us
+            <span className="border-2 border-amber-600 text-amber-600 px-4 py-2 sm:px-4 sm:py-2 rounded text-base md:text-lg font-semibold tracking-wide uppercase">
+            Participate
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-3 md:mb-6">
+          {/* <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-3 md:mb-6">
             Participate
-          </h1>
+          </h1> */}
           
           <div className="flex items-center justify-center gap-4 py-3 md:py-4">
             <div className="h-px w-12 sm:w-16 bg-amber-600"></div>

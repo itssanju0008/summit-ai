@@ -64,14 +64,14 @@ export function Footer() {
                   Organizers
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#thematic-focus"
                   className="text-gray-300 hover:text-amber-500 transition-colors"
                 >
                   Thematic Focus
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 

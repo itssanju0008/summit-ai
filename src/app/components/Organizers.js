@@ -1,7 +1,7 @@
 const organizers = [
   {
     id: 1,
-    type: "Co-Organizer",
+    type: "Organizer",
     name: "Yardi School of AI ",
     description: "Working towards the protection and promotion of rights and interests of Scheduled Tribes.",
     image: '/images/logos/scailogo.jpeg',
@@ -9,10 +9,10 @@ const organizers = [
   },
   {
     id: 2,
-    type: "Organizer by",
+    type: "Organizer",
     name: "Bhagwan Birsa Munda Cell",
     description: "Leading the initiative to empower tribal communities through digital transformation and sustainable development.",
-    image: '/images/logos/bbmcelllogo.png',
+ image: '/images/logos/iitdlogo.png',
     color: "from-orange-500 to-red-600"
   },
   {
@@ -25,21 +25,12 @@ const organizers = [
   },
   {
     id: 4,
-    type: "Supporting Partner",
+    type: "Supported by",
     name: "Ministry of Tribal Affairs, Government of India",
     description: "Promoting tribal art, culture, and products through modern marketing channels and technology.",
     image: '/images/logos/motalogo.svg',
     color: "from-blue-500 to-cyan-600"
   }
-];
-
-const supporters = [
-  "Ministry of Electronics and Information Technology",
-  "NITI Aayog",
-  "Digital India Corporation",
-  "National e-Governance Division",
-  "Indian Institute of Technology Network",
-  "Tribal Development Foundation"
 ];
 
 export function Organizers() {
@@ -49,13 +40,13 @@ export function Organizers() {
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-12">
           <div className="inline-block mb-3 md:mb-4">
-            <span className="border-2 border-amber-600 text-amber-600 px-3 py-1.5 md:px-4 md:py-2 rounded text-xs md:text-sm font-semibold tracking-wide uppercase">
+            <span className="border-2 border-amber-600 text-amber-600 px-3 py-1.5 md:px-4 md:py-2 rounded text-base md:text-lg font-semibold tracking-wide uppercase">
               Event Partners
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6 px-2">
+          {/* <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6 px-2">
             Organizers & Partners
-          </h2>
+          </h2> */}
           
           <div className="flex items-center justify-center gap-3 md:gap-4 py-3 md:py-4">
             <div className="h-px w-12 md:w-16 bg-amber-600"></div>

@@ -23,7 +23,7 @@ export function Header({ currentPage, setCurrentPage }) {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b-2 border-orange-500">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b-2 border-orange-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logos Section */}
@@ -32,7 +32,7 @@ export function Header({ currentPage, setCurrentPage }) {
               {/* Logo 1 */}
               <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center">
                 <img
-                  src={"/images/logos/iitdlogo.png"}
+                  src={"/images/logos/iitdlogo.jpeg"}
                   alt="IITD"
                   className="max-h-full object-contain"
                 />

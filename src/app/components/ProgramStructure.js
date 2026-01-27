@@ -167,13 +167,13 @@ export function ProgramStructure() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-block mb-4">
-            <span className="border-2 border-amber-600 text-amber-600 px-4 py-2 rounded text-sm font-semibold tracking-wide uppercase">
-              Event Schedule
+            <span className="border-2 border-amber-600 text-amber-600 px-4 py-2 rounded text-base md:text-lg font-semibold tracking-wide uppercase">
+             Program Structure
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6">
+          {/* <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6">
             Program Structure
-          </h2>
+          </h2> */}
           
           <div className="flex items-center justify-center gap-4 py-4">
             <div className="h-px w-16 bg-amber-600"></div>

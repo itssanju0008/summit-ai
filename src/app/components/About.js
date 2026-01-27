@@ -5,13 +5,13 @@ export function About() {
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-12">
           <div className="inline-block mb-3 md:mb-4">
-            <span className="border-2 border-amber-600 text-amber-600 px-3 py-1.5 md:px-4 md:py-2 rounded text-xs md:text-sm font-semibold tracking-wide uppercase">
+            <span className="border-2 border-amber-600 text-amber-600 px-3 py-1.5 md:px-4 md:py-2 rounded text-base md:text-lg font-semibold tracking-wide uppercase">
               About the Event
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6 px-2">
+          {/* <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6 px-2">
             IndiaAI Pre-Summit Event
-          </h2>
+          </h2> */}
           
           {/* Decorative Divider */}
           <div className="flex items-center justify-center gap-3 md:gap-4 py-3 md:py-4">
@@ -20,7 +20,7 @@ export function About() {
             <div className="h-px w-12 md:w-16 bg-amber-600"></div>
           </div>
           
-          <div className="max-w-4xl mx-auto space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-sm md:text-base px-4">
+          <div className="max-w-4xl mx-auto space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-sm md:text-base px-4 text-justify font-[550]">
             <p>
               The "Community-Driven AI: A Roadmap for India's Last Mile" is a
               one-and-a-half-day intensive workshop jointly organised by the 
@@ -58,7 +58,7 @@ export function About() {
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 mb-4 md:mb-6">
               Vision
             </h3>
-            <div className="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
+            <div className="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-sm md:text-base text-justify font-[550]">
               <p>
                 To develop a future-oriented roadmap for community-driven AI systems 
                 that respond to last-mile realities in India with relevance for global contexts.
@@ -87,7 +87,7 @@ export function About() {
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 mb-4 md:mb-6">
               Goal
             </h3>
-            <div className="text-gray-700 leading-relaxed text-sm md:text-base">
+            <div className="text-gray-700 leading-relaxed text-sm md:text-base text-justify font-[550]">
               <p className="mb-3 md:mb-4">
                 The primary goal of the workshop is to brainstorm, synthesize, and 
                 articulate a roadmap for developing community-driven AI in India.
