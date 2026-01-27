@@ -22,7 +22,7 @@ export function About() {
           
           <div className="max-w-4xl mx-auto space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-sm md:text-base px-4 text-justify font-[550]">
             <p>
-              The "Community-Driven AI: A Roadmap for India's Last Mile" is a
+              The "Community-Driven AI A Roadmap for India's Last Mile" is a
               one-and-a-half-day intensive workshop jointly organised by the 
               Bhagwan Birsa Munda Cell and the School of AI, IIT Delhi.
             </p>
