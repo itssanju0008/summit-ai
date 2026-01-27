@@ -16,7 +16,7 @@ const inaugurators = [
   },
   {
     id: 2,
-    name: "Prof. Ranjana Chopra",
+    name: "Smt. Ranjana Chopra",
     title: "Secretary, Ministry of Tribal Affairs",
     image: "/images/Speakers/ranjana_chopra_ias.png",
     website: "https://trifed.tribal.gov.in/node/1533",
@@ -24,7 +24,7 @@ const inaugurators = [
   },
   {
     id: 3,
-    name: "Dr. Vibhu Nayar",
+    name: "Shri. Vibhu Nayar",
     title: "Former Secretary, Ministry Of Tribal Affairs",
     image: "/images/Speakers/vibhunayar.jpeg",
     website: "https://example.com/anjali-sharma",

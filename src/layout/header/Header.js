@@ -75,7 +75,7 @@ export function Header({ currentPage, setCurrentPage }) {
             >
               <Link
                 href={"/"}
-                className="flex items-center gap-1 text-black hover:text-orange-600 font-medium transition-colors"
+                className="flex items-center gap-1 text-black hover:text-orange-600 font-bold transition-colors"
               >
                 Home
                 <ChevronDown
@@ -109,19 +109,19 @@ export function Header({ currentPage, setCurrentPage }) {
 
             <Link
               href={"#program"}
-              className="text-black hover:text-orange-600 font-medium transition-colors"
+              className="text-black hover:text-orange-600 font-bold transition-colors"
             >
               Program Structure
             </Link>
             <Link
               href={"/people"}
-              className="text-black hover:text-orange-600 font-medium transition-colors"
+              className="text-black hover:text-orange-600 font-bold transition-colors"
             >
               People
             </Link>
             <Link
               href={"/participate"}
-              className="text-black hover:text-orange-600 font-medium transition-colors"
+              className="text-black hover:text-orange-600 font-bold transition-colors"
             >
               Participate
             </Link>

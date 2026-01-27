@@ -6,9 +6,9 @@ const schedule = [
     date: "TBD 2026",
     sessions: [
       {
-        time: "8:45 AM - 09:30 AM",
+        time: "9:00 AM - 09:30 AM",
         title: "Inaugration",
-        description: "Registration desk opens, and welcome kit distribution",
+        description: "Lamp Lighting & Inaugration",
         icon: Presentation,
         type: "General"
       },
@@ -77,8 +77,8 @@ const schedule = [
       },
       {
         time: "4:50 PM - 6:00 PM",
-        title: "Panel discussion)",
-        description: "Communit Driven AI | Digital Health Solutions | Sustainable Agriculture Tech",
+        title: "Panel Discussion",
+        description: "Social Centric",
         icon: UsersRound,
         type: "Panel"
       },
@@ -138,7 +138,14 @@ const schedule = [
         type: "Collaborative"
       },
       {
-        time: "1:00 PM Onwards",
+        time: "1:00 PM - 1:15 PM",
+        title: "Valedictory Session",
+        description: "Concludes the event on an inspiring note.",
+        icon: Speech,
+        type: "Collaborative"
+      },
+      {
+        time: "1:15 PM Onwards",
         title: "Way Froward & Vote of Thanks",
         description: "Farewell lunch and informal networking",
         icon: Coffee,
@@ -185,6 +192,18 @@ export function ProgramStructure() {
             A carefully curated 1.5-day program featuring keynotes, panels, workshops,
             and networking opportunities designed to maximize learning and collaboration.
           </p>
+        </div>
+        {/* Download CTA */}
+        <div className="mt-12 md:mt-16 text-center bg-slate-900 rounded p-6 md:p-12 border-4 border-amber-600 mb-8">
+          <p className="text-sm md:text-base text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
+            Download the complete program guide with detailed session descriptions, speaker information,
+            and venue maps.
+          </p>
+          <a href={'/pdf/programguide.pdf'} download>
+            <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto">
+              Download Program Guide (PDF)
+            </button>
+          </a>
         </div>
 
         {/* Event Details Cards */}
@@ -276,20 +295,6 @@ export function ProgramStructure() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Download CTA */}
-        <div className="mt-12 md:mt-16 text-center bg-slate-900 rounded p-6 md:p-12 border-4 border-amber-600">
-          <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-3 md:mb-4 px-2">Want the Full Schedule?</h3>
-          <p className="text-sm md:text-base text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
-            Download the complete program guide with detailed session descriptions, speaker information,
-            and venue maps.
-          </p>
-          <a href={'/pdf/programguide.pdf'} download>
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto">
-              Download Program Guide (PDF)
-            </button>
-          </a>
         </div>
       </div>
     </section>
