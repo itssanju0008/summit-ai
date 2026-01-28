@@ -1,3 +1,5 @@
+'use client';
+import { useLinkContext } from "@/context/LinkContext";
 import {
   Mail,
   Phone,
@@ -5,6 +7,7 @@ import {
 } from "lucide-react";
 
 export function Footer() {
+    const { setHash } = useLinkContext();
   return (
     <footer className="bg-slate-900 text-white pt-16 pb-8 border-t-4 border-amber-600">
       <div className="max-w-6xl mx-auto px-6">
@@ -35,6 +38,7 @@ export function Footer() {
               <li>
                 <a
                   href="#about"
+                  onClick={() => setHash("about")}
                   className="text-gray-300 hover:text-amber-500 transition-colors"
                 >
                   About Event
@@ -43,6 +47,7 @@ export function Footer() {
               <li>
                 <a
                   href="#speakers"
+                  onClick={() => setHash("speakers")}
                   className="text-gray-300 hover:text-amber-500 transition-colors"
                 >
                   Speakers
@@ -51,6 +56,7 @@ export function Footer() {
               <li>
                 <a
                   href="#program"
+                  onClick={() => setHash("program")}
                   className="text-gray-300 hover:text-amber-500 transition-colors"
                 >
                   Program
@@ -59,9 +65,28 @@ export function Footer() {
               <li>
                 <a
                   href="#organizers"
+                  onClick={() => setHash("organizers")}
                   className="text-gray-300 hover:text-amber-500 transition-colors"
                 >
                   Organizers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#people"
+                  onClick={() => setHash("people")}
+                  className="text-gray-300 hover:text-amber-500 transition-colors"
+                >
+                  People
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#participate"
+                  onClick={() => setHash("participate")}
+                  className="text-gray-300 hover:text-amber-500 transition-colors"
+                >
+                  Participate
                 </a>
               </li>
               {/* <li>

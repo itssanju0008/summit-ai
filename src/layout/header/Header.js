@@ -2,25 +2,13 @@
 import { useState, useRef } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useLinkContext } from "@/context/LinkContext";
 
-export function Header({ currentPage, setCurrentPage }) {
+export function Header() {
+  const { setHash } = useLinkContext();
   const closeTimeoutRef = useRef(null);
   const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const handleNavigation = (page, hash) => {
-    setCurrentPage(page);
-    if (hash && page === "home") {
-      setTimeout(() => {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
-    } else if (page === "home" && !hash) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b-2 border-orange-500">
@@ -46,7 +34,10 @@ export function Header({ currentPage, setCurrentPage }) {
                 />
               </div>
               {/* India AI Logo - Made Bigger */}
-              <Link href={"/"} className="w-24 h-12 sm:w-28 sm:h-16 flex items-center justify-center overflow-hidden">
+              <Link
+                href={"/"}
+                className="w-24 h-12 sm:w-28 sm:h-16 flex items-center justify-center overflow-hidden"
+              >
                 <img
                   src={"/images/logos/India-AI-Impact-Summit-2026-Logo.png"}
                   alt="India AI"
@@ -75,6 +66,7 @@ export function Header({ currentPage, setCurrentPage }) {
             >
               <Link
                 href={"/"}
+                onClick={() => setHash("")}
                 className="flex items-center gap-1 text-black hover:text-orange-600 font-bold transition-colors"
               >
                 Home
@@ -87,18 +79,21 @@ export function Header({ currentPage, setCurrentPage }) {
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 overflow-hidden">
                   <Link
                     href={"#about"}
+                    onClick={() => setHash("about")}
                     className="block w-full text-left px-4 py-2 text-black hover:bg-orange-100 hover:text-orange-600 transition-colors"
                   >
                     About
                   </Link>
                   <Link
                     href={"#organizers"}
+                    onClick={() => setHash("organizers")}
                     className="block w-full text-left px-4 py-2 text-black hover:bg-orange-100 hover:text-orange-600 transition-colors"
                   >
                     Organizers
                   </Link>
                   <Link
                     href={"#speakers"}
+                    onClick={() => setHash("speakers")}
                     className="block w-full text-left px-4 py-2 text-black hover:bg-orange-100 hover:text-orange-600 transition-colors"
                   >
                     Speakers
@@ -109,18 +104,21 @@ export function Header({ currentPage, setCurrentPage }) {
 
             <Link
               href={"#program"}
+              onClick={() => setHash("program")}
               className="text-black hover:text-orange-600 font-bold transition-colors"
             >
               Program Structure
             </Link>
             <Link
-              href={"/people"}
+              href={"#people"}
+              onClick={() => setHash("people")}
               className="text-black hover:text-orange-600 font-bold transition-colors"
             >
               People
             </Link>
             <Link
-              href={"/participate"}
+              href={"#participate"}
+              onClick={() => setHash("participate")}
               className="text-black hover:text-orange-600 font-bold transition-colors"
             >
               Participate

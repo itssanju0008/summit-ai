@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/layout/header/Header";
 import { Footer } from "@/layout/footer/Footer";
 import ScrollManager from "@/layout/ScrollManager";
+import { LinkProvider } from "@/context/LinkContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,10 +26,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header/>
-        <ScrollManager />
-        {children}
-        <Footer/>
+        <LinkProvider>
+          <Header/>
+          <ScrollManager />
+          {children}
+          <Footer/>
+        </LinkProvider>
       </body>
     </html>
   );

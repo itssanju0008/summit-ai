@@ -1,7 +1,8 @@
-import { User } from 'lucide-react';
 import { Image } from '@/ui/Image/Image';
+import { User } from 'lucide-react';
+import React from 'react'
 
-export function People() {
+export default function People() {
   const organizingCommittee = [
     {
       name: 'Sandeep Kumar',
@@ -167,32 +168,32 @@ export function People() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-20">
-      <div className="max-w-5xl mx-auto px-6 py-16">
+    <div id="people" className="min-h-screen bg-white pt-14 sm:pt-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-16">
         {/* Page Title */}
-        <div className="text-center mb-12">
-          <div className="inline-block mb-4">
-            <span className="border-2 border-amber-600 text-amber-600 px-4 py-2 rounded text-sm font-semibold tracking-wide uppercase">
+        <div className="text-center mb-8 md:mb-12">
+          <div className="inline-block mb-3 md:mb-4">
+            <span className="border-2 border-amber-600 text-amber-600 px-4 py-2 rounded text-base md:text-lg font-semibold tracking-wide uppercase">
               Our Team
             </span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-serif text-gray-900 mb-6">
+          {/* <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-3 md:mb-6">
             People
-          </h1>
+          </h1> */}
           
-          <div className="flex items-center justify-center gap-4 py-4">
-            <div className="h-px w-16 bg-amber-600"></div>
+          <div className="flex items-center justify-center gap-3 sm:gap-4 py-3 md:py-4">
+            <div className="h-px w-12 sm:w-16 bg-amber-600"></div>
             <div className="w-2 h-2 bg-amber-600 rotate-45"></div>
-            <div className="h-px w-16 bg-amber-600"></div>
+            <div className="h-px w-12 sm:w-16 bg-amber-600"></div>
           </div>
         </div>
 
         {/* Organizing Committee Section */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-serif font-bold text-gray-900 text-center mb-12">
+        <div className="mb-12 md:mb-18">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-900 text-center mb-8 md:mb-12">
             Organizing Committee
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8 md:gap-10 justify-items-center">
             {organizingCommittee.map((person, index) => (
               <a
                 key={index}
@@ -202,7 +203,7 @@ export function People() {
                 className="group"
               >
                 <div className="text-center flex flex-col items-center">
-                  <div className="mb-4 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-amber-600 group-hover:border-amber-700 transition-colors">
+                  <div className="mb-3 sm:mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-amber-600 group-hover:border-amber-700 transition-colors">
                     <Image
                       src={person.image}
                       alt={person.name}
@@ -210,10 +211,10 @@ export function People() {
                     />
                   </div>
 
-                  <h3 className="font-serif font-bold text-gray-900 text-lg text-center mb-1">
+                  <h3 className="font-serif font-bold text-gray-900 text-sm sm:text-lg text-center mb-1 leading-tight">
                     {person.name}
                   </h3>
-                  <p className="text-sm text-gray-700 text-center">
+                  <p className="text-xs sm:text-sm text-gray-700 text-center">
                     {person.organization}
                   </p>
                 </div>
@@ -223,14 +224,14 @@ export function People() {
         </div>
 
         {/* Organizing Members Section */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-serif font-bold text-gray-900 text-center mb-12">
+        <div className="mb-12 md:mb-18">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-900 text-center mb-8 md:mb-12">
             Volunteer Team
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-7 md:gap-10">
             {organizingMembers.map((person, index) => (
               <div key={index} className="text-center">
-                <div className="mb-4 mx-auto w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-gray-300 bg-gray-100 flex items-center justify-center">
+                <div className="mb-3 sm:mb-4 mx-auto w-20 h-20 sm:w-26 sm:h-26 md:w-32 md:h-32 rounded-full overflow-hidden border-3 border-gray-300 bg-gray-100 flex items-center justify-center">
                   {person.image ? (
                     <Image
                       src={person.image}
@@ -238,10 +239,12 @@ export function People() {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <User className="w-16 h-16 text-gray-400" />
+                    <User className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gray-400" />
                   )}
                 </div>
-                <h3 className="font-serif font-semibold text-gray-900 text-base">{person.name}</h3>
+                <h3 className="font-serif font-semibold text-gray-900 text-xs sm:text-sm md:text-base leading-snug">
+                  {person.name}
+                </h3>
               </div>
             ))}
           </div>
