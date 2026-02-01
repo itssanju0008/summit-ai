@@ -85,7 +85,7 @@ export function About() {
           {/* Goal Section */}
           <div className="bg-slate-50 p-4 sm:p-6 md:p-8 rounded border-l-4 border-amber-600">
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 mb-4 md:mb-6">
-              Goal
+              Goals
             </h3>
             <div className="text-gray-700 leading-relaxed text-sm md:text-base text-justify font-[550]">
               <p className="mb-3 md:mb-4">

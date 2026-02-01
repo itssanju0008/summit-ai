@@ -209,7 +209,7 @@ export function ProgramStructure() {
           </p>
         </div>
         {/* Download CTA */}
-        <div className="mt-12 md:mt-16 text-center bg-slate-900 rounded p-6 md:p-12 border-4 border-amber-600 mb-8">
+        <div className="hidden mt-12 md:mt-16 text-center bg-slate-900 rounded p-6 md:p-12 border-4 border-amber-600 mb-8">
           <p className="text-sm md:text-base text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
             Download the complete program guide with detailed session
             descriptions, speaker information, and venue maps.

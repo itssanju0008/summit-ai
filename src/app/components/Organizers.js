@@ -4,7 +4,8 @@ const organizers = [
     type: "Organizer",
     name: "Yardi School of AI ",
     description: "Working towards the protection and promotion of rights and interests of Scheduled Tribes.",
-    image: '/images/logos/scailogo.jpeg',
+    // image: '/images/logos/scailogo.jpeg',
+     image: '/images/logos/iitdlogo.png',
     color: "from-green-500 to-teal-600"
   },
   {
