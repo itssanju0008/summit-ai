@@ -353,10 +353,9 @@ export function Hero() {
                 <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </Link>
             </div>
-            {/* <span className="text-sm sm:text-base">
-              <span className="text-amber-600">*</span> This is an invite only
-              event click here to participate
-            </span> */}
+            <span className="text-sm sm:text-base">
+              <span className="text-amber-600">*</span> Invitation letters has been sent to selected participants.
+            </span>
           </div>
 
           {/* Right Side - India AI Summit Card */}

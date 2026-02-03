@@ -6,22 +6,23 @@ import { Globe, Mail, ChevronLeft, ChevronRight } from "lucide-react";
 import { Image } from "@/ui/Image/Image";
 
 const inaugurators = [
-  {
+    {
     id: 1,
-    name: "Prof. Rangan Banerjee",
-    title: "Director, IIT Delhi",
-    image: "/images/Speakers/ranganbanerjee.jpg",
-    website: "https://www.ese.iitb.ac.in/~rb/",
-    email: "rangan@iitb.ac.in",
-  },
-  {
-    id: 2,
     name: "Smt. Ranjana Chopra",
     title: "Secretary, Ministry of Tribal Affairs",
     image: "/images/Speakers/ranjana_chopra_ias.png",
     website: "https://trifed.tribal.gov.in/node/1533",
     email: "secy-tribal@nic.in",
   },
+  {
+    id: 2,
+    name: "Prof. Rangan Banerjee",
+    title: "Director, IIT Delhi",
+    image: "/images/Speakers/ranganbanerjee.jpg",
+    website: "https://www.ese.iitb.ac.in/~rb/",
+    email: "rangan@iitb.ac.in",
+  },
+
   {
     id: 3,
     name: "Shri. Vibhu Nayar",
