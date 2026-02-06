@@ -388,7 +388,7 @@ export function ProgramStructure() {
                 <h3 className="text-lg md:text-2xl font-bold text-white">
                   Program Structure Guide
                 </h3>
-                <div>
+                <div className="flex items-center gap-2">
                   <button
                     onClick={handleDownload}
                     className="text-white hover:bg-amber-700 p-2 rounded transition-colors"
