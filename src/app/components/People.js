@@ -205,14 +205,28 @@ export default function People() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-900 text-center mb-8 md:mb-12">
             Organizing Committee
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8 md:gap-10 justify-items-center">
-            {organizingCommittee.map((person, index) => (
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-6 gap-5 sm:gap-8 md:gap-10">
+            {organizingCommittee.map((person, index) => {
+              const needsCentering = organizingCommittee.length % 3 === 2;
+              const isCenteredRow = needsCentering && index >= organizingCommittee.length - 2;
+              const isLastSingle = organizingCommittee.length % 2 === 1 && index === organizingCommittee.length - 1;
+              const positionClass = isCenteredRow
+                ? index === organizingCommittee.length - 2
+                  ? ' md:col-start-2'
+                  : ' md:col-start-4'
+                : '';
+              const baseSpanClass = isLastSingle
+                ? ' col-span-2 sm:col-span-1 justify-self-center w-full max-w-[calc(50%-0.75rem)] sm:max-w-none'
+                : ' col-span-1 w-full';
+              const cardWrapperClass = `${baseSpanClass} md:col-span-2${positionClass}`;
+
+              return (
               <a
                 key={index}
                 href={person.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group"
+                className={`group ${cardWrapperClass}`}
               >
                 <div className="text-center flex flex-col items-center">
                   <div className="mb-3 sm:mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-amber-600 group-hover:border-amber-700 transition-colors">
@@ -231,7 +245,8 @@ export default function People() {
                   </p>
                 </div>
               </a>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -241,8 +256,16 @@ export default function People() {
             Volunteer Team
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-7 md:gap-10">
-            {organizingMembers.map((person, index) => (
-              <div key={index} className="text-center">
+            {organizingMembers.map((person, index) => {
+              const isLastSingle =
+                organizingMembers.length % 2 === 1 &&
+                index === organizingMembers.length - 1;
+              const wrapperClass = isLastSingle
+                ? "col-span-2 justify-self-center w-full max-w-[calc(50%-0.75rem)] sm:col-span-1 sm:max-w-none"
+                : "col-span-1 w-full";
+
+              return (
+              <div key={index} className={`text-center ${wrapperClass}`}>
                 <div className="mb-3 sm:mb-4 mx-auto w-20 h-20 sm:w-26 sm:h-26 md:w-32 md:h-32 rounded-full overflow-hidden border-3 border-gray-300 bg-gray-100 flex items-center justify-center">
                   {person.image ? (
                     <Image
@@ -258,7 +281,8 @@ export default function People() {
                   {person.name}
                 </h3>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
