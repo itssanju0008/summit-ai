@@ -12,7 +12,6 @@ export function Header() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b-2 border-orange-500">
-  
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logos Section */}
@@ -99,10 +98,16 @@ export function Header() {
                   >
                     Speakers
                   </Link>
+                    <Link
+                    href={"#faculties"}
+                    onClick={() => setHash("faculties")}
+                    className="block w-full text-left px-4 py-2 text-black hover:bg-orange-100 hover:text-orange-600 transition-colors"
+                  >
+                    Faculties
+                  </Link>
                 </div>
               )}
             </div>
-          
 
             <Link
               href={"#program"}
@@ -111,7 +116,7 @@ export function Header() {
             >
               Program Structure
             </Link>
-               <Link
+            <Link
               href={"#organizers"}
               onClick={() => setHash("organizers")}
               className="text-black hover:text-orange-600 font-bold transition-colors"
@@ -154,49 +159,70 @@ export function Header() {
             <div className="flex flex-col gap-2">
               <Link
                 href={"/"}
-                onClick={() =>{setHash(""); setIsMobileMenuOpen(false)}}
+                onClick={() => {
+                  setHash("");
+                  setIsMobileMenuOpen(false);
+                }}
                 className="text-left px-4 py-2 text-gray-800 hover:bg-orange-100 hover:text-orange-600 rounded transition-colors"
               >
                 Home
               </Link>
               <Link
                 href={"/#about"}
-                onClick={() => {setHash("about"); setIsMobileMenuOpen(false)}}
+                onClick={() => {
+                  setHash("about");
+                  setIsMobileMenuOpen(false);
+                }}
                 className="text-left px-4 py-2 text-gray-800 hover:bg-orange-100 hover:text-orange-600 rounded transition-colors"
               >
                 About
               </Link>
               <Link
                 href={"/#organizers"}
-                onClick={() => {setHash("organizers"); setIsMobileMenuOpen(false)}}
+                onClick={() => {
+                  setHash("organizers");
+                  setIsMobileMenuOpen(false);
+                }}
                 className="text-left px-4 py-2 text-gray-800 hover:bg-orange-100 hover:text-orange-600 rounded transition-colors"
               >
                 Organizers
               </Link>
               <Link
                 href={"/#speakers"}
-                onClick={() => {setHash("speakers"); setIsMobileMenuOpen(false)}}
+                onClick={() => {
+                  setHash("speakers");
+                  setIsMobileMenuOpen(false);
+                }}
                 className="text-left px-4 py-2 text-gray-800 hover:bg-orange-100 hover:text-orange-600 rounded transition-colors"
               >
                 Speakers
               </Link>
               <Link
                 href={"/#program"}
-                onClick={() => {setHash("program"); setIsMobileMenuOpen(false)}}
+                onClick={() => {
+                  setHash("program");
+                  setIsMobileMenuOpen(false);
+                }}
                 className="text-left px-4 py-2 text-gray-800 hover:bg-orange-100 hover:text-orange-600 rounded transition-colors"
               >
                 Program Structure
               </Link>
               <Link
                 href={"/#people"}
-                onClick={() =>{setHash("people"); setIsMobileMenuOpen(false)}}
+                onClick={() => {
+                  setHash("people");
+                  setIsMobileMenuOpen(false);
+                }}
                 className="text-left px-4 py-2 text-gray-800 hover:bg-orange-100 hover:text-orange-600 rounded transition-colors"
               >
                 People
               </Link>
               <Link
                 href={"/#participate"}
-                onClick={() => {setHash("participate"); setIsMobileMenuOpen(false)}}
+                onClick={() => {
+                  setHash("participate");
+                  setIsMobileMenuOpen(false);
+                }}
                 className="text-left px-4 py-2 text-gray-800 hover:bg-orange-100 hover:text-orange-600 rounded transition-colors"
               >
                 Participate

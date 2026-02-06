@@ -3,6 +3,7 @@
 import { useLinkContext } from "@/context/LinkContext";
 import { About } from "./components/About";
 import { Carousel } from "./components/Carousel";
+import { Faculties } from "./components/Faculties";
 import { Hero } from "./components/Hero";
 import { InaugratedBy } from "./components/InaugratedBy";
 import { Organizers } from "./components/Organizers";
@@ -28,6 +29,7 @@ export default function Home() {
           <About />
           {/* <InaugratedBy /> */}
           <Speakers />
+          <Faculties />
           <Outcomes />
           <ProgramStructure />
           <Organizers />
