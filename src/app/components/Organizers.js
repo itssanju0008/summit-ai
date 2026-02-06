@@ -41,7 +41,7 @@ const organizers = [
     type: "Adivaani",
     name: "Every dialect has its own identity",
     description:
-      "Shared responsibility of bridging language barriers and preserving cultural identity and traditions.",
+      "A Shared responsibility of bridging language barriers and preserving cultural identity and traditions.",
     image: "/images/logos/logo.png",
     color: "from-green-500 to-teal-600",
   },

@@ -121,7 +121,7 @@ const schedule = [
         time: "7:00 PM - 8:15 PM",
         title: "Thematic Breakout Session",
         description:
-          "Theme Based Sessions Democratic | Responsive | Prioritization",
+          "AI Ethics and Fairness | AI for Governance & Service Delivery | Contextualizing AI for India",
         icon: Lightbulb, // Changed to idea/theme icon
         type: "Thematic",
       },
@@ -247,17 +247,17 @@ export function ProgramStructure() {
             Download the complete program guide with detailed session
             descriptions, speaker information, and venue maps.
           </p>
-          <button
+          {/* <button
             onClick={() => handleDownload(true)}
             className="md:hidden bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto"
           >
             Download Program Guide (PDF)
-          </button>
+          </button> */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="hidden md:inline bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto"
+            className=" bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto"
           >
-            Open Program Guide (PDF)
+            Open Program Guide
           </button>
         </div>
 
@@ -307,9 +307,9 @@ export function ProgramStructure() {
                     <h3 className="text-2xl md:text-3xl font-serif font-bold mb-1 md:mb-2">
                       {day.day}
                     </h3>
-                    <p className="text-white/90 text-sm md:text-base">
+                    {/* <p className="text-white/90 text-sm md:text-base">
                       {day.date}
-                    </p>
+                    </p> */}
                   </div>
                   <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded border border-white/30 text-sm md:text-base">
                     <Clock className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
@@ -398,11 +398,11 @@ export function ProgramStructure() {
               </div>
 
               {/* PDF Viewer */}
-              <div className="flex-1 overflow-hidden">
-                <iframe
-                  src="/pdf/ps.pdf"
-                  className="w-full h-full border-0"
-                  title="Program Structure PDF"
+              <div className="flex-1 overflow-y-scroll">
+                <img
+                  src="/images/posters/ps.jpeg"
+                  className="w-full h-auto border-0"
+                  title="Program Structure"
                 />
               </div>
 
