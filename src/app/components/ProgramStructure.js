@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   Clock,
   MapPin,
@@ -9,6 +12,8 @@ import {
   UsersRound,
   Speech,
   MicVocal,
+  X,
+  Download,
 } from "lucide-react";
 
 const schedule = [
@@ -182,6 +187,17 @@ const sessionTypes = {
 };
 
 export function ProgramStructure() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/pdf/ps.pdf";
+    link.download = "Program_Structure.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="program" className="py-16 bg-white">
       <div className="max-w-5xl mx-auto px-6">
@@ -214,11 +230,12 @@ export function ProgramStructure() {
             Download the complete program guide with detailed session
             descriptions, speaker information, and venue maps.
           </p>
-          <a href={'/pdf/ps.pdf'} download>
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto">
-              Download Program Guide (PDF)
-            </button>
-          </a>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto"
+          >
+            Open Program Guide (PDF)
+          </button>
         </div>
         
 
@@ -339,6 +356,58 @@ export function ProgramStructure() {
             </div>
           ))}
         </div>
+
+        {/* PDF Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-0">
+            <div className="bg-white rounded-none shadow-2xl w-screen h-screen max-w-none max-h-screen flex flex-col overflow-hidden">
+              {/* Modal Header */}
+              <div className="bg-gradient-to-r from-amber-600 to-amber-700 px-4 md:px-6 py-4 flex items-center justify-between">
+                <h3 className="text-lg md:text-2xl font-bold text-white">
+                  Program Structure Guide
+                </h3>
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="text-white hover:bg-amber-700 p-2 rounded transition-colors"
+                  aria-label="Close modal"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* PDF Viewer */}
+              <div className="flex-1 overflow-hidden">
+                <iframe
+                  src="/pdf/ps.pdf"
+                  className="w-full h-full border-0"
+                  title="Program Structure PDF"
+                />
+              </div>
+
+              {/* Modal Footer */}
+              <div className="bg-gray-100 border-t border-gray-300 px-4 md:px-6 py-4 flex items-center justify-between gap-4">
+                <p className="text-sm text-gray-600">
+                  Program Structure - 7 & 8 February 2026
+                </p>
+                <div className="flex gap-3">
+                  <button
+                    onClick={handleDownload}
+                    className="flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-4 md:px-6 py-2 rounded font-semibold transition-colors text-sm md:text-base"
+                  >
+                    <Download className="w-4 h-4 md:w-5 md:h-5" />
+                    Download
+                  </button>
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="bg-gray-300 hover:bg-gray-400 text-gray-900 px-4 md:px-6 py-2 rounded font-semibold transition-colors text-sm md:text-base"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
