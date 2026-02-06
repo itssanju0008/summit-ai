@@ -230,9 +230,15 @@ export function ProgramStructure() {
             Download the complete program guide with detailed session
             descriptions, speaker information, and venue maps.
           </p>
+           <button
+            onClick={() => handleDownload(true)}
+            className="md:hidden bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto"
+          >
+            Download Program Guide (PDF)
+          </button>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto"
+            className="hidden md:inline bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto"
           >
             Open Program Guide (PDF)
           </button>
