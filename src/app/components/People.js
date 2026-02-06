@@ -5,31 +5,31 @@ import React from 'react'
 export default function People() {
   const organizingCommittee = [
     {
-      name: 'Sandeep Kumar',
+      name: 'Prof. Sandeep Kumar',
       organization: 'IIT Delhi',
-      image: '/images/Organizers/Sandeep_kumar.jpg',
+      image: '/images/faculties/sandeep.jpeg',
       link: 'https://ctech.iitd.ac.in/sandeep.html'
     },
     {
-      name: 'Parag Singla',
+      name: 'Prof. Parag Singla',
       organization: 'IIT Delhi',
       image: '/images/Organizers/parag_singla.jpg',
       link: 'https://www.cse.iitd.ac.in/~parags/'
     },
     {
-      name: 'Raunak Bhattacharya',
+      name: 'Prof. Raunak Bhattacharya',
       organization: 'IIT Delhi',
       image: '/images/Organizers/raunakbhattacharya.jpeg',
       link: 'https://web.iitd.ac.in/~raunakbh/'
     },
     {
-      name: 'Vivek Kumar',
+      name: 'Prof. Vivek Kumar',
       organization: 'IIT Delhi',
       image: '/images/Organizers/Vivek_kumar.jpg',
       link: 'https://crdt.iitd.ac.in/faculty/vivek-kumar'
     },
     {
-      name: 'HARIPRASAD KODAMANA',
+      name: 'Prof. Hariprasad Kodamana',
       organization: 'IIT Delhi',
       image: '/images/Organizers/Hari sir.jpg',
       link: 'https://web.iitd.ac.in/~kodamana/HariprasadKodamana.html'
