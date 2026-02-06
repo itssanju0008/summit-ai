@@ -26,7 +26,7 @@ export default function Home() {
           <Hero />
           <Carousel />
           <About />
-          <InaugratedBy />
+          {/* <InaugratedBy /> */}
           <Speakers />
           <Outcomes />
           <ProgramStructure />

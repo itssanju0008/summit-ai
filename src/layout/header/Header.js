@@ -85,13 +85,13 @@ export function Header() {
                   >
                     About
                   </Link>
-                  <Link
+                  {/* <Link
                     href={"#organizers"}
                     onClick={() => setHash("organizers")}
                     className="block w-full text-left px-4 py-2 text-black hover:bg-orange-100 hover:text-orange-600 transition-colors"
                   >
                     Organizers
-                  </Link>
+                  </Link> */}
                   <Link
                     href={"#speakers"}
                     onClick={() => setHash("speakers")}
@@ -102,6 +102,7 @@ export function Header() {
                 </div>
               )}
             </div>
+          
 
             <Link
               href={"#program"}
@@ -109,6 +110,13 @@ export function Header() {
               className="text-black hover:text-orange-600 font-bold transition-colors"
             >
               Program Structure
+            </Link>
+               <Link
+              href={"#organizers"}
+              onClick={() => setHash("organizers")}
+              className="text-black hover:text-orange-600 font-bold transition-colors"
+            >
+              Organizers
             </Link>
             <Link
               href={"#people"}
