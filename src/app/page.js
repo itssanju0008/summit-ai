@@ -27,13 +27,13 @@ export default function Home() {
         <>
           <Hero />
           <Carousel />
+          <Posters />
           <About />
           <InaugratedBy />
           <Speakers />
           <Faculties />
           <Outcomes />
           <ProgramStructure />
-          <Posters />
           <Organizers />
         </>
       )}

@@ -1,182 +1,169 @@
 "use client";
-import { useState, useEffect, useCallback, useRef } from "react";
-import EmblaCarousel from "embla-carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Image } from "@/ui/Image/Image";
 
-const posters = [
-  {
-    id: 1,
-    title: "Main Poster",
-    image: "/images/posters/Main Poster.png",
-  },
-  {
-    id: 2,
-    title: "Inauguration Poster",
-    image: "/images/posters/Inauguration Poster.png",
-  },
-  {
-    id: 3,
-    title: "Speakers Poster",
-    image: "/images/posters/Speakers Poster.png",
-  },
-  {
-    id: 4,
-    title: "Panel 1 Poster",
-    image: "/images/posters/Panel 1 Poster.png",
-  },
-  {
-    id: 5,
-    title: "Panel 2 Poster",
-    image: "/images/posters/Panel 2 Poster.png",
-  },
-];
-
-function PostersCarousel() {
-  const containerRef = useRef(null);
-  const emblaApi = useRef(null);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState([]);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const emblaCarousel = EmblaCarousel(
-      containerRef.current,
-      {
-        align: "start",
-        loop: true,
-        skipSnaps: false,
-        breakpoints: {
-          "(max-width: 640px)": { slidesToScroll: 1, active: true },
-          "(max-width: 1024px)": { slidesToScroll: 1, active: true },
-          "(min-width: 1024px)": { slidesToScroll: 1, active: true },
-        },
-      },
-      [Autoplay({ delay: 6000, stopOnInteraction: true })],
-    );
-
-    emblaApi.current = emblaCarousel;
-
-    const onSelect = () => {
-      setSelectedIndex(emblaCarousel.selectedScrollSnap());
-    };
-
-    const onInit = () => {
-      setScrollSnaps(emblaCarousel.scrollSnapList());
-    };
-
-    emblaCarousel.on("select", onSelect);
-    emblaCarousel.on("init", onInit);
-    onInit();
-    onSelect();
-
-    return () => {
-      emblaCarousel.destroy();
-    };
-  }, []);
-
-  const scrollPrev = useCallback(() => {
-    if (!emblaApi.current) return;
-    emblaApi.current.scrollPrev();
-  }, []);
-
-  const scrollNext = useCallback(() => {
-    if (!emblaApi.current) return;
-    emblaApi.current.scrollNext();
-  }, []);
-
-  const scrollTo = useCallback((index) => {
-    if (!emblaApi.current) return;
-    emblaApi.current.scrollToScrollSnap(index);
-  }, []);
-
-  return (
-    <div className="relative px-3 sm:px-6">
-      <button
-        onClick={scrollPrev}
-        className="absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 bg-white border-2 border-amber-600 rounded-full shadow-md flex items-center justify-center hover:bg-amber-600 hover:text-white transition-all text-amber-600 active:scale-95"
-        aria-label="Previous poster"
-      >
-        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-      </button>
-
-      <button
-        onClick={scrollNext}
-        className="absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 bg-white border-2 border-amber-600 rounded-full shadow-md flex items-center justify-center hover:bg-amber-600 hover:text-white transition-all text-amber-600 active:scale-95"
-        aria-label="Next poster"
-      >
-        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
-      </button>
-
-      <div className="embla overflow-hidden" ref={containerRef}>
-        <div className="embla__container flex">
-          {posters.map((poster) => (
-            <div
-              key={poster.id}
-              className="embla__slide flex-[0_0_100%] min-w-0"
-            >
-              <div className="px-2 sm:px-6 md:px-12 py-4">
-                <div className="bg-white rounded border-2 border-gray-200 overflow-hidden h-full max-w-2xl mx-auto">
-                  <div className="relative w-full aspect-[18/25] overflow-hidden bg-gray-100">
-                    <Image
-                      src={poster.image}
-                      alt={poster.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Dots Navigation */}
-      <div className="flex justify-center gap-2 mt-6 sm:mt-8">
-        {scrollSnaps.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollTo(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === selectedIndex
-                ? "bg-amber-600 w-6"
-                : "bg-gray-300 hover:bg-amber-400"
-            }`}
-            aria-label={`Go to poster ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
 
 export function Posters() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef(null);
+  const cardsRef = useRef([]);
+
+  // Sample images - replace with your own
+  const images = [
+    "/images/posters/p1.png",
+    "/images/posters/p2.png",
+    "/images/posters/p3.png",
+    "/images/posters/p4.png",
+    "/images/posters/p5.png",
+  ];
+
+  const animateCards = () => {
+    cardsRef.current.forEach((card, index) => {
+      if (!card) return;
+
+      let diff = index - currentIndex;
+
+      // Wrap around logic for circular positioning
+      if (diff > images.length / 2) {
+        diff -= images.length;
+      } else if (diff < -images.length / 2) {
+        diff += images.length;
+      }
+
+      const absDiff = Math.abs(diff);
+
+      // Reset transform
+      gsap.killTweensOf(card);
+
+      if (absDiff === 0) {
+        // Center card (main focus)
+        gsap.to(card, {
+          x: 0,
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          zIndex: 50,
+          rotationY: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        });
+      } else {
+        // All other cards visible in background
+        const direction = diff > 0 ? 1 : -1;
+
+        // Responsive spacing based on screen size
+        const isMobile = window.innerWidth < 640;
+        const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
+        const spacing = isMobile ? 100 : isTablet ? 140 : 180;
+
+        const xPos = direction * (spacing * absDiff);
+
+        gsap.to(card, {
+          x: xPos,
+          y: 20 + absDiff * 10,
+          scale: Math.max(0.65, 1 - absDiff * 0.15),
+          opacity: Math.max(0.3, 1 - absDiff * 0.2),
+          zIndex: 50 - absDiff * 10,
+          rotationY: -direction * (10 + absDiff * 5),
+          duration: 0.6,
+          ease: "power3.out",
+        });
+      }
+    });
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const goToPrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  useEffect(() => {
+    animateCards();
+  }, [currentIndex]);
+
+  // Auto-play effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
-    <section id="posters" className="py-12 md:py-16 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-8 md:mb-12">
-          <div className="inline-block mb-3 md:mb-4">
-            <span className="border-2 border-amber-600 text-amber-600 px-3 py-1.5 md:px-4 md:py-2 rounded text-base md:text-lg font-semibold tracking-wide uppercase">
-              Event Highlights
-            </span>
-          </div>
-
-          <div className="flex items-center justify-center gap-3 md:gap-4 py-3 md:py-4">
-            <div className="h-px w-12 md:w-16 bg-amber-600"></div>
-            <div className="w-2 h-2 bg-amber-600 rotate-45"></div>
-            <div className="h-px w-12 md:w-16 bg-amber-600"></div>
-          </div>
-
-          <p className="text-sm md:text-lg text-gray-700 max-w-3xl mx-auto px-4">
-            Explore the key highlights and events of our summit through our
-            promotional materials.
-          </p>
+    <div className=" bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 py-8 sm:py-12 md:py-16">
+      <div className="text-center px-4">
+        <div className="inline-block mb-3 md:mb-4">
+          <span className="border-2 border-amber-600 text-amber-600 px-3 py-1.5 md:px-4 md:py-2 rounded text-sm sm:text-base md:text-lg font-semibold tracking-wide uppercase">
+            Event Highlights
+          </span>
         </div>
-
-        <PostersCarousel />
+        <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 py-2 sm:py-3 md:py-4">
+          <div className="h-px w-8 sm:w-12 md:w-16 bg-amber-600"></div>
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-amber-600 rotate-45"></div>
+          <div className="h-px w-8 sm:w-12 md:w-16 bg-amber-600"></div>
+        </div>
       </div>
-    </section>
+
+      <div className="flex items-center justify-center overflow-hidden">
+        <div className="w-full max-w-7xl px-2 sm:px-4">
+          {/* Carousel Container - Dynamic height based on card content */}
+          <div
+            ref={carouselRef}
+            className="relative min-h-[340px] xs:min-h-[410px] sm:min-h-[480px] md:min-h-[550px] lg:min-h-[620px] py-8 sm:py-10 md:py-12 flex items-center justify-center"
+            style={{ perspective: "2000px" }}
+          >
+            {/* Navigation Buttons */}
+            <button
+              onClick={goToPrev}
+              aria-label="Previous slide"
+              className="absolute left-1 xs:left-2 sm:left-4 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-gray-700/80 hover:bg-gray-600 text-white font-bold rounded-full transition-all duration-300 flex items-center justify-center shadow-lg hover:scale-110 active:scale-95"
+            >
+              <span className="text-lg sm:text-xl">◄</span>
+            </button>
+            <button
+              onClick={goToNext}
+              aria-label="Next slide"
+              className="absolute right-1 xs:right-2 sm:right-4 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-amber-600/80 hover:bg-amber-500 text-white font-bold rounded-full transition-all duration-300 flex items-center justify-center shadow-lg hover:scale-110 active:scale-95"
+            >
+              <span className="text-lg sm:text-xl">►</span>
+            </button>
+
+            {/* Cards - Maintaining 1440x2000 aspect ratio (0.72:1) */}
+            {images.map((image, index) => (
+              <div
+                key={index}
+                ref={(el) => (cardsRef.current[index] = el)}
+                className="absolute 
+                  border-2 border-amber-600
+                  w-[216px] h-[300px]
+                  xs:w-[252px] xs:h-[350px]
+                  sm:w-[288px] sm:h-[400px]
+                  md:w-[324px] md:h-[450px]
+                  lg:w-[360px] lg:h-[500px]
+                  xl:w-[432px] xl:h-[600px]
+                  rounded-lg overflow-hidden  cursor-pointer transition-shadow hover:shadow-3xl"
+                style={{
+                  transformStyle: "preserve-3d",
+                  backfaceVisibility: "hidden",
+                }}
+                onClick={() => setCurrentIndex(index)}
+              >
+                {/* Image with proper aspect ratio */}
+                <img
+                  src={image}
+                  alt={`Event poster ${index + 1}`}
+                  className="w-full h-full object-cover bg-white"
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
