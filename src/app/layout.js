@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Community Driven AI",
   description: "Community Driven AI: A Roadmap For India's Last Mile",
-    metadataBase: new URL('https://itssanju0008.github.io/summit-ai'),
+    // metadataBase: new URL('https://itssanju0008.github.io/summit-ai'),
 };
 
 
