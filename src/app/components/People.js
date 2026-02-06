@@ -77,6 +77,10 @@ export default function People() {
       name: 'Aditya Jain',
       image: '/images/Voulenteers/adityajain.jpeg',
     },
+     {
+      name: 'Sanjeev Singh',
+      image: '/images/Voulenteers/sanjeev.jpeg',
+    },
     {
       name: 'Vipul Kumar Singh',
       image: '/images/Voulenteers/vipulkumarsharma.jpeg',
@@ -125,6 +129,10 @@ export default function People() {
       name: 'Anushka Banerjee',
       image: '/images/Voulenteers/anushkabanerjee.jpeg',
     },
+     {
+      name: 'Lakshay',
+      image: '/images/Voulenteers/lakshay.jpeg',
+    },
     {
       name: 'Chinmay Rajpurohit',
       image: '/images/Voulenteers/chinmayrajput.jpeg',
@@ -136,6 +144,10 @@ export default function People() {
     {
       name: 'Atulya Jaiswal',
       image: '/images/Voulenteers/atulyajaiswal.jpeg',
+    },
+       {
+      name: 'Aditi Gupta',
+      image: '/images/Voulenteers/aditiGupta.jpeg',
     },
     {
       name: 'Suraj Natekar',
