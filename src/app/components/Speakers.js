@@ -26,7 +26,7 @@ const speakersRow1 = [
     id: 21,
     name: "Prof. Sandeep Kumar",
     title: "IIT Delhi",
-    image: "/images/Organizers/Sandeep_kumar.jpg",
+    image: "/images/Organizers/sandeep.jpeg",
     website: "https://ctech.iitd.ac.in/sandeep.html",
     email: "Ksandeep@iitd.ac.in",
   },
