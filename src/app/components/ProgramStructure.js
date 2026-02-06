@@ -22,8 +22,8 @@ import {
   MapPin,
   Clock,
   X,
-  Download
-} from 'lucide-react';
+  Download,
+} from "lucide-react";
 
 const schedule = [
   {
@@ -388,13 +388,22 @@ export function ProgramStructure() {
                 <h3 className="text-lg md:text-2xl font-bold text-white">
                   Program Structure Guide
                 </h3>
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="text-white hover:bg-amber-700 p-2 rounded transition-colors"
-                  aria-label="Close modal"
-                >
-                  <X className="w-6 h-6" />
-                </button>
+                <div>
+                  <button
+                    onClick={handleDownload}
+                    className="text-white hover:bg-amber-700 p-2 rounded transition-colors"
+                    aria-label="Close modal"
+                  >
+                    <Download className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="text-white hover:bg-amber-700 p-2 rounded transition-colors"
+                    aria-label="Close modal"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
               </div>
 
               {/* PDF Viewer */}
@@ -404,28 +413,6 @@ export function ProgramStructure() {
                   className="w-full h-auto border-0"
                   title="Program Structure"
                 />
-              </div>
-
-              {/* Modal Footer */}
-              <div className="bg-gray-100 border-t border-gray-300 px-4 md:px-6 py-4 flex items-center justify-between gap-4">
-                <p className="text-sm text-gray-600">
-                  Program Structure - 7 & 8 February 2026
-                </p>
-                <div className="flex gap-3">
-                  <button
-                    onClick={handleDownload}
-                    className="flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-4 md:px-6 py-2 rounded font-semibold transition-colors text-sm md:text-base"
-                  >
-                    <Download className="w-4 h-4 md:w-5 md:h-5" />
-                    Download
-                  </button>
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="bg-gray-300 hover:bg-gray-400 text-gray-900 px-4 md:px-6 py-2 rounded font-semibold transition-colors text-sm md:text-base"
-                  >
-                    Close
-                  </button>
-                </div>
               </div>
             </div>
           </div>
