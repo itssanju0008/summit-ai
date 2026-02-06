@@ -214,12 +214,13 @@ export function ProgramStructure() {
             Download the complete program guide with detailed session
             descriptions, speaker information, and venue maps.
           </p>
-          <a href={'/pdf/pg.pdf'} download>
+          <a href={'/pdf/ps.pdf'} download>
             <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto">
               Download Program Guide (PDF)
             </button>
           </a>
         </div>
+        
 
         {/* Event Details Cards */}
         <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
