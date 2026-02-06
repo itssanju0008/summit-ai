@@ -3,8 +3,8 @@ self.__BUILD_MANIFEST = {
     "afterFiles": [],
     "beforeFiles": [
       {
-        "source": "/summit-ai//_next/:path+",
-        "destination": "/summit-ai/_next/:path+"
+        "source": "/summit-ai/out//_next/:path+",
+        "destination": "/summit-ai/out/_next/:path+"
       }
     ],
     "fallback": []
