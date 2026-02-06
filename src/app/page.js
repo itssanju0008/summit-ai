@@ -8,6 +8,7 @@ import { Hero } from "./components/Hero";
 import { InaugratedBy } from "./components/InaugratedBy";
 import { Organizers } from "./components/Organizers";
 import { Outcomes } from "./components/Outcomes";
+import { Posters } from "./components/Posters";
 import { ProgramStructure } from "./components/ProgramStructure";
 import { Speakers } from "./components/Speakers";
 import People from "./components/People";
@@ -27,11 +28,12 @@ export default function Home() {
           <Hero />
           <Carousel />
           <About />
-          {/* <InaugratedBy /> */}
+          <InaugratedBy />
           <Speakers />
           <Faculties />
           <Outcomes />
           <ProgramStructure />
+          <Posters />
           <Organizers />
         </>
       )}

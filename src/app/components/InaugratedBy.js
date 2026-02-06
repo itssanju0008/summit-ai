@@ -6,12 +6,21 @@ import { Globe, Mail, ChevronLeft, ChevronRight } from "lucide-react";
 import { Image } from "@/ui/Image/Image";
 
 const inaugurators = [
-    {
-    id: 1,
-    name: "Smt. Ranjana Chopra",
-    title: "Secretary, Ministry of Tribal Affairs",
-    image: "/images/Speakers/ranjana_chopra_ias.png",
-    website: "https://trifed.tribal.gov.in/node/1533",
+  //   {
+  //   id: 1,
+  //   name: "Smt. Ranjana Chopra",
+  //   title: "Secretary, Ministry of Tribal Affairs",
+  //   image: "/images/Speakers/ranjana_chopra_ias.png",
+  //   website: "https://trifed.tribal.gov.in/node/1533",
+  //   email: "secy-tribal@nic.in",
+  // },
+
+  {
+    id: 3,
+    name: "Shri. Vibhu Nayar",
+    title: "Former Secretary, Ministry Of Tribal Affairs",
+    image: "/images/Speakers/vibhunayar.jpeg",
+    website: "https://example.com/anjali-sharma",
     email: "secy-tribal@nic.in",
   },
   {
@@ -22,14 +31,13 @@ const inaugurators = [
     website: "https://www.ese.iitb.ac.in/~rb/",
     email: "rangan@iitb.ac.in",
   },
-
   {
-    id: 3,
-    name: "Shri. Vibhu Nayar",
-    title: "Former Secretary, Ministry Of Tribal Affairs",
-    image: "/images/Speakers/vibhunayar.jpeg",
-    website: "https://example.com/anjali-sharma",
-    email: "secy-tribal@nic.in",
+    id: 1,
+    name: "Shri Anant Prakash Pandey",
+    title: "Joint Secretary Ministry of Tribal Affairs",
+    image: "/images/Speakers/anantppandey.png",
+    website: "https://www.linkedin.com/in/anant-prakash-pandey-ifs-148b289a",
+    email: "js-mota@tribal.gov.in",
   },
 ];
 
