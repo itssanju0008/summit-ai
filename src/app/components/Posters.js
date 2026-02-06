@@ -10,11 +10,12 @@ export function Posters() {
 
   // Sample images - replace with your own
   const images = [
-    "/images/posters/p1.png",
+    "/images/posters/p1.jpeg",
     "/images/posters/p2.png",
     "/images/posters/p3.png",
     "/images/posters/p4.png",
     "/images/posters/p5.png",
+    "/images/posters/p6.jpeg",
   ];
 
   const animateCards = () => {

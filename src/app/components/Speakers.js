@@ -198,9 +198,9 @@ const speakersRow2 = [
   },
   {
     id: 27,
-    name: "Smt. Deepali",
-    title: "IIT Delhi",
-    image: "/images/Speakers/deepali.png",
+    name: "Deepali Masirkar",
+    title: "Ministry of Tribal Affairs",
+    image: "/images/Speakers/deepali.jpeg",
     website: "",
     email: "",
   },
@@ -215,7 +215,7 @@ const speakersRow2 = [
   {
     id: 29,
     name: "AntarSing",
-    title: "IIT Delhi",
+    title: "Student MA Tribal Affairs, DAVV Indore",
     image: "/images/Speakers/antarsing.jpeg",
     website: "",
     email: "",
@@ -223,7 +223,7 @@ const speakersRow2 = [
   {
     id: 30,
     name: "Mukund Aggarwal",
-    title: "IIT Delhi",
+    title: " Young social leader, IIT Delhi Alumini",
     image: "/images/Speakers/mukundaggarwal.jpeg",
     website: "",
     email: "",
@@ -231,7 +231,7 @@ const speakersRow2 = [
   {
     id: 31,
     name: "Yogesh Rawat",
-    title: "IIT Delhi",
+    title: "MCA, JNU",
     image: "/images/Speakers/yogeshrawat.jpeg",
     website: "",
     email: "",

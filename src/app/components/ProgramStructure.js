@@ -2,19 +2,28 @@
 
 import { useState } from "react";
 import {
-  Clock,
-  MapPin,
-  Calendar,
-  Users,
-  Presentation,
   Coffee,
   Award,
   UsersRound,
   Speech,
   MicVocal,
+  Presentation,
+  Utensils,
+  Handshake,
+  BookOpen,
+  Mic,
+  Brain,
+  Target,
+  Users,
+  Zap,
+  Globe,
+  Lightbulb,
+  Calendar,
+  MapPin,
+  Clock,
   X,
-  Download,
-} from "lucide-react";
+  Download
+} from 'lucide-react';
 
 const schedule = [
   {
@@ -25,20 +34,21 @@ const schedule = [
         time: "9:00 AM - 09:30 AM",
         title: "Inaugration",
         description: "Lamp Lighting & Inaugration",
-        icon: Presentation,
+        icon: Presentation, // Custom icon for inauguration
         type: "General",
       },
       {
-        time: "09:30 AM - 10:10 AM",
-        title: "Keynote",
-        description: "A Keynote, delivered by one of our speakers",
-        icon: Speech,
+        time: "09:30 AM - 09:50 AM",
+        title: "Context Setting",
+        description:
+          "Setting the stage for the summit with an overview of the current landscape and key challenges.",
+        icon: BookOpen, // Changed to more appropriate icon
         type: "Plenary",
       },
       {
-        time: "10:00 AM - 10:50 AM",
+        time: "09:50 AM - 10:50 AM",
         title: "Talks",
-        description: "2 Talks",
+        description: "3 Talks",
         icon: MicVocal,
         type: "Plenary",
       },
@@ -57,22 +67,22 @@ const schedule = [
         type: "Plenary",
       },
       {
-        time: "12:00 AM - 1:00 PM",
-        title: "Panel Discussion",
+        time: "12:00 AM - 1:10 PM",
+        title: "Panel 1: AI to Last Mile Roadmap: AI Centric",
         description: "AI Centric panel discussion",
-        icon: UsersRound,
+        icon: Brain, // Changed to AI-related icon
         type: "Panel",
       },
       {
-        time: "1:00 PM - 2:15 PM",
+        time: "1:10 PM - 2:10 PM",
         title: "Lunch Break",
         description: "Traditional lunch featuring tribal cuisine",
-        icon: Coffee,
+        icon: Utensils, // Changed to food icon
         type: "Break",
       },
       {
         time: "2:20 PM - 3:00 PM",
-        title: "Afternoon Keynote",
+        title: "Keynote",
         description: "A Keynote, delivered by one of our speakers",
         icon: Speech,
         type: "Plenary",
@@ -93,25 +103,26 @@ const schedule = [
       },
       {
         time: "4:50 PM - 6:00 PM",
-        title: "Panel Discussion",
+        title: "Panel 2: AI to Last Mile Roadmap: Social Perspective",
         description: "Social Centric",
-        icon: UsersRound,
+        icon: Users, // Changed to social/people icon
         type: "Panel",
       },
       {
         time: "6:00 PM - 6:50 PM",
-        title: "Voices from Parallel Communities",
+        title:
+          "Panel 3: AI to Last Mile Roadmap: Voices from Parallel Communities",
         description:
           "Community-Led Digital Transformation | Tech Entrepreneurship | Policy & Governance",
-        icon: Presentation,
-        type: "Workshop",
+        icon: Globe, // Changed to community/global icon
+        type: "Panel",
       },
       {
-        time: "6:50 PM - 8:00 PM",
-        title: "Breakout Session",
+        time: "7:00 PM - 8:15 PM",
+        title: "Thematic Breakout Session",
         description:
           "Theme Based Sessions Democratic | Responsive | Prioritization",
-        icon: Award,
+        icon: Lightbulb, // Changed to idea/theme icon
         type: "Thematic",
       },
     ],
@@ -124,56 +135,62 @@ const schedule = [
         time: "9:00 AM - 9:40 AM",
         title: "Keynote: The Last Mile",
         description: "Keynote",
-        icon: Speech,
+        icon: Target, // Changed to target/reach icon for "Last Mile"
         type: "Plenary",
       },
       {
         time: "9:40 AM - 11:00 AM",
         title: "Talks",
         description: "4 Talks",
-        icon: UsersRound,
+        icon: MicVocal,
         type: "Plenary",
       },
       {
-        time: "11:30 AM - 11:30 AM",
+        time: "11:00 AM - 11:30 AM",
         title: "Tea Break",
         description: "Refreshments",
         icon: Coffee,
         type: "Break",
       },
       {
-        time: "10:45 AM - 12:00 PM",
+        time: "11:30 AM - 12:10 PM",
         title: "Keynote",
         description: "Last Keynote",
         icon: Speech,
         type: "Plenary",
       },
       {
-        time: "12:00 PM - 1:00 PM",
+        time: "12:10 PM - 12:50 PM",
         title: "Summary of Breakouts",
         description:
           "Presentation of outcomes, vote of thanks, and way forward",
         icon: Award,
         type: "Collaborative",
       },
+      // {
+      //   time: "1:00 PM - 1:15 PM",
+      //   title: "Valedictory Session",
+      //   description: "Concludes the event on an inspiring note.",
+      //   icon: Speech,
+      //   type: "Collaborative",
+      // },
       {
-        time: "1:00 PM - 1:15 PM",
-        title: "Valedictory Session",
-        description: "Concludes the event on an inspiring note.",
-        icon: Speech,
+        time: "1:00 PM Onwards",
+        title: "Way Forward & Vote of Thanks",
+        description: "Farewell lunch and informal networking",
+        icon: Handshake, // Changed to networking/partnership icon
         type: "Collaborative",
       },
       {
-        time: "1:15 PM Onwards",
-        title: "Way Froward & Vote of Thanks",
-        description: "Farewell lunch and informal networking",
-        icon: Coffee,
+        time: "1:30 PM - 2:30 PM",
+        title: "Lunch Break",
+        description: "Traditional lunch featuring tribal cuisine",
+        icon: Utensils, // Consistent with Day 1 lunch
         type: "Break",
       },
     ],
   },
 ];
-
 const sessionTypes = {
   Plenary: "bg-amber-600",
   Panel: "bg-amber-700",
@@ -230,7 +247,7 @@ export function ProgramStructure() {
             Download the complete program guide with detailed session
             descriptions, speaker information, and venue maps.
           </p>
-           <button
+          <button
             onClick={() => handleDownload(true)}
             className="md:hidden bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 md:px-8 md:py-4 rounded font-semibold uppercase tracking-wide transition-colors text-sm md:text-base w-full sm:w-auto"
           >
@@ -243,7 +260,6 @@ export function ProgramStructure() {
             Open Program Guide (PDF)
           </button>
         </div>
-        
 
         {/* Event Details Cards */}
         <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">

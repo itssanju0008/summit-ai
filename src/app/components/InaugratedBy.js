@@ -31,14 +31,14 @@ const inaugurators = [
     website: "https://www.ese.iitb.ac.in/~rb/",
     email: "rangan@iitb.ac.in",
   },
-  {
-    id: 1,
-    name: "Shri Anant Prakash Pandey",
-    title: "Joint Secretary Ministry of Tribal Affairs",
-    image: "/images/Speakers/anantppandey.png",
-    website: "https://www.linkedin.com/in/anant-prakash-pandey-ifs-148b289a",
-    email: "js-mota@tribal.gov.in",
-  },
+  // {
+  //   id: 1,
+  //   name: "Shri Anant Prakash Pandey",
+  //   title: "Joint Secretary Ministry of Tribal Affairs",
+  //   image: "/images/Speakers/anantppandey.png",
+  //   website: "https://www.linkedin.com/in/anant-prakash-pandey-ifs-148b289a",
+  //   email: "js-mota@tribal.gov.in",
+  // },
 ];
 
 export function InaugratedBy() {
@@ -67,7 +67,7 @@ export function InaugratedBy() {
           </p>
         </div>
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {inaugurators.map((person) => (
               <div
                 key={person.id}
