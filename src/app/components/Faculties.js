@@ -58,8 +58,7 @@ export function Faculties() {
           </div>
 
           <p className="text-sm md:text-lg text-gray-700 max-w-3xl mx-auto px-4">
-            The Organizing Committee, comprising esteemed faculty members from IIT Delhi, is dedicated to curating an intellectually stimulating and impactful summit. With their expertise and vision, they ensure that the event fosters meaningful discussions, promotes collaboration, and drives innovation in the field of AI for social good.
-          </p>
+            Organizing members  </p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8">
