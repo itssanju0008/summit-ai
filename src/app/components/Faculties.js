@@ -77,7 +77,7 @@ export function Faculties() {
             const cardWrapperClass = `${baseSpanClass} lg:col-span-2${positionClass}`;
             const card = (
               <div className="group bg-white rounded border-2 border-gray-200 hover:border-amber-600 transition-all duration-300 h-full flex flex-col">
-                <div className="p-5 sm:p-6 flex flex-col items-center text-center">
+                <div className="flex-1 p-5 sm:p-6 flex flex-col items-center text-center">
                   <div className="mb-4 w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-amber-600 group-hover:border-amber-700 transition-colors">
                     <Image
                       src={faculty.image}

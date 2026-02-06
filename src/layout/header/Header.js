@@ -197,6 +197,16 @@ export function Header() {
               >
                 Speakers
               </Link>
+               <Link
+                href={"/#faculties"}
+                onClick={() => {
+                  setHash("faculties");
+                  setIsMobileMenuOpen(false);
+                }}
+                className="text-left px-4 py-2 text-gray-800 hover:bg-orange-100 hover:text-orange-600 rounded transition-colors"
+              >
+                Faculties
+              </Link>
               <Link
                 href={"/#program"}
                 onClick={() => {
