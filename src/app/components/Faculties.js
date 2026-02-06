@@ -8,6 +8,20 @@ const faculties = [
     image: "/images/faculties/sandeep.jpeg",
     link: "https://ctech.iitd.ac.in/sandeep.html",
   },
+    {
+    id: 3,
+    name: "Prof. Raunak Bhattacharya",
+    title: "IIT Delhi",
+    image: "/images/faculties/raunakbhattacharya.jpeg",
+    link: "https://web.iitd.ac.in/~raunakbh/",
+  },
+    {
+    id: 5,
+    name: "Prof. Hariprasad Kodamana",
+    title: "IIT Delhi",
+    image: "/images/faculties/Hari sir.jpg",
+    link: "https://web.iitd.ac.in/~kodamana/HariprasadKodamana.html",
+  },
   {
     id: 2,
     name: "Prof. Parag Singla",
@@ -15,13 +29,7 @@ const faculties = [
     image: "/images/faculties/parag_singla.jpg",
     link: "https://www.cse.iitd.ac.in/~parags/",
   },
-  {
-    id: 3,
-    name: "Prof. Raunak Bhattacharya",
-    title: "IIT Delhi",
-    image: "/images/faculties/raunakbhattacharya.jpeg",
-    link: "https://web.iitd.ac.in/~raunakbh/",
-  },
+
   {
     id: 4,
     name: "Prof. Vivek Kumar",
@@ -29,13 +37,7 @@ const faculties = [
     image: "/images/faculties/Vivek_kumar.jpg",
     link: "https://crdt.iitd.ac.in/faculty/vivek-kumar",
   },
-  {
-    id: 5,
-    name: "Prof. Hariprasad Kodamana",
-    title: "IIT Delhi",
-    image: "/images/faculties/Hari sir.jpg",
-    link: "https://web.iitd.ac.in/~kodamana/HariprasadKodamana.html",
-  },
+
 ];
 
 export function Faculties() {
@@ -45,7 +47,7 @@ export function Faculties() {
         <div className="text-center mb-8 md:mb-12">
           <div className="inline-block mb-3 md:mb-4">
             <span className="border-2 border-amber-600 text-amber-600 px-3 py-1.5 md:px-4 md:py-2 rounded text-base md:text-lg font-semibold tracking-wide uppercase">
-              Faculty
+              Organizing Committee
             </span>
           </div>
 
@@ -56,8 +58,7 @@ export function Faculties() {
           </div>
 
           <p className="text-sm md:text-lg text-gray-700 max-w-3xl mx-auto px-4">
-            Meet the IIT Delhi faculty members guiding the summit with their
-            expertise and leadership.
+            The Organizing Committee, comprising esteemed faculty members from IIT Delhi, is dedicated to curating an intellectually stimulating and impactful summit. With their expertise and vision, they ensure that the event fosters meaningful discussions, promotes collaboration, and drives innovation in the field of AI for social good.
           </p>
         </div>
 
